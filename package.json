@@ -1,0 +1,23 @@
+{
+  "name": "javascript-fun",
+  "version": "1.0.0",
+  "description": "just some simple javascript fun",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve ./public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackgroom/javascript-fun.git"
+  },
+  "author": "jack groom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackgroom/javascript-fun/issues"
+  },
+  "homepage": "https://github.com/jackgroom/javascript-fun#readme",
+  "dependencies": {
+    "serve": "^11.3.2"
+  }
+}
