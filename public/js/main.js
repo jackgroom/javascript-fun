@@ -11,7 +11,7 @@ var fps, fpsInterval, startTime, now, then, elapsed;
 
 function start() {
   fps = 60;
-  setup();
+  setup(canvas);
   startAnimation(fps);
 }
 
@@ -35,5 +35,5 @@ function gameLoop() {
 
 function drawLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  draw();
+  draw(canvas);
 }
