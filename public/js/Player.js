@@ -3,6 +3,8 @@ import Shape from './Shape.js';
 
 export default class Player {
   constructor(canvas, name) {
+    this.gravity = new Vector2(0, 0.3);
+
     this.name = name;
     this.canvas = canvas;
 
@@ -14,7 +16,6 @@ export default class Player {
 
   apply_force(force) {
     this.acc.add(force);
-    this.acc.mult(0);
   }
 
   draw() {
@@ -31,9 +32,11 @@ export default class Player {
   update() {
     this.pos.add(this.vel);
     this.vel.add(this.acc);
+    this.acc.mult(0);
   }
 
   render() {
+    this.apply_force(this.gravity);
     this.update();
     this.draw();
   }
