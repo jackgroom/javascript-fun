@@ -1,3 +1,5 @@
+import { vectors } from './main.js';
+
 export default class Vector2 {
   constructor(x, y) {
     this.x = x ? x : 0;
@@ -6,6 +8,13 @@ export default class Vector2 {
     this.magnitude = this.get_magnitude();
     this.direction = this.get_direction();
     this.limit = null;
+
+    vectors.push(this);
+  }
+
+  update() {
+    this.magnitude = this.get_magnitude();
+    this.direction = this.get_direction();
   }
 
   add(otherVector) {

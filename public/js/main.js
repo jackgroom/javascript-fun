@@ -9,6 +9,8 @@ var stop = false;
 var frameCount = 0;
 var fps, fpsInterval, startTime, now, then, elapsed;
 
+export var vectors = [];
+
 function start() {
   fps = 60;
   setup(canvas);
@@ -28,6 +30,11 @@ function gameLoop() {
   elapsed = now - then;
   if (elapsed > fpsInterval) {
     then = now - (elapsed % fpsInterval);
+
+    vectors.forEach((vector) => {
+      vector.update();
+    });
+
     drawLoop();
     frameCount++;
   }

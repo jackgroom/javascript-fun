@@ -4,7 +4,6 @@ var players = [];
 
 export function setup(canvas) {
   players.push(new Player(canvas, 'test'));
-  console.log(players[0]);
 }
 
 export function draw(canvas) {
