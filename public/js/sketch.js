@@ -1,4 +1,5 @@
 import Player from './Player.js';
+import math from './Math.js';
 
 var players = [];
 

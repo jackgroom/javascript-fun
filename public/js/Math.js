@@ -1,21 +1,21 @@
-export default function Math() {
-  random = (min, max) => {
+export default {
+  random: (min, max) => {
     if (!max) {
       max = min;
       min = 0;
     }
-    return this.floor(Math.random() * (max - min + 1)) + min;
-  };
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  },
 
-  floor = (num) => {
+  floor: (num) => {
     return Math.floor(num); // kinda useless lol but oh well 🤷‍♂️
-  };
+  },
 
-  clamp = (num, min, max) => {
+  clamp: (num, min, max) => {
     return Math.max(min, Math.min(max, num));
-  };
+  },
 
-  map = (v, vMin, vMax, nMin, nMax) => {
+  map: (v, vMin, vMax, nMin, nMax) => {
     return ((v - vMin) / (vMax - vMin)) * (nMax - nMin) + nMin;
-  };
-}
+  },
+};
