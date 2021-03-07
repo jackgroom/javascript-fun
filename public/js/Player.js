@@ -3,7 +3,7 @@ import Shape from './Shape.js';
 
 export default class Player {
   constructor(canvas, name) {
-    this.gravity = new Vector2(0, -0.3);
+    this.gravity = new Vector2(0, 0.3);
 
     this.name = name;
     this.canvas = canvas;
