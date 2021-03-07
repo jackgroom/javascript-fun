@@ -3,7 +3,7 @@ import Shape from './Shape.js';
 
 export default class Player {
   constructor(canvas, name) {
-    this.gravity = new Vector2(0, 0.3);
+    this.gravity = new Vector2(0, -0.3);
 
     this.name = name;
     this.canvas = canvas;
@@ -16,6 +16,18 @@ export default class Player {
 
   apply_force(force) {
     this.acc.add(force);
+  }
+
+  edges() {
+    if (this.pos.x + this.size.x >= this.canvas.width) {
+      this.pos.x = this.canvas.width - this.size.x / 2;
+    } else if (this.pos.x <= 0) {
+      this.pos.x = 0 + this.size.x / 2;
+    } else if (this.pos.y >= this.canvas.height) {
+      this.pos.y = this.canvas.height - this.size.y / 2;
+    } else if (this.pos.y <= 0) {
+      this.pos.y = 0 + this.size.y / 2;
+    }
   }
 
   draw() {
@@ -33,6 +45,8 @@ export default class Player {
     this.pos.add(this.vel);
     this.vel.add(this.acc);
     this.acc.mult(0);
+
+    this.edges();
   }
 
   render() {
